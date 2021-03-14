@@ -1,0 +1,14 @@
+F:\Anton\projects\project1\src\main\java\resource\NameGenerationSettingsManager.java
+F:\Anton\projects\project1\src\main\java\command\CommandEnum.java
+F:\Anton\projects\project1\src\main\java\command\redirect\EmptyCommand.java
+F:\Anton\projects\project1\src\main\java\factory\ActionFactory.java
+F:\Anton\projects\project1\src\main\java\command\nameGeneration\NameGenerationCommand.java
+F:\Anton\projects\project1\src\main\java\command\main\ChooseActionCommand.java
+F:\Anton\projects\project1\src\main\java\command\Command.java
+F:\Anton\projects\project1\src\main\java\servlet\GenerateNameServlet.java
+F:\Anton\projects\project1\src\main\java\servlet\ProjectServlet.java
+F:\Anton\projects\project1\src\main\java\resource\PagesManager.java
+F:\Anton\projects\project1\src\main\java\logic\nameGeneration\Code.java
+F:\Anton\projects\project1\src\main\java\logic\nameGeneration\NameGeneration.java
+F:\Anton\projects\project1\src\main\java\logic\nameGeneration\Alphabet.java
+F:\Anton\projects\project1\src\main\java\resource\MessageManager.java

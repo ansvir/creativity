@@ -1,0 +1,15 @@
+resource\NameGenerationSettingsManager.class
+command\main\ChooseActionCommand.class
+command\redirect\EmptyCommand.class
+servlet\GenerateNameServlet.class
+command\CommandEnum.class
+command\nameGeneration\NameGenerationCommand.class
+command\CommandEnum$1.class
+logic\nameGeneration\Alphabet.class
+command\Command.class
+logic\nameGeneration\NameGeneration.class
+logic\nameGeneration\Code.class
+factory\ActionFactory.class
+resource\MessageManager.class
+servlet\ProjectServlet.class
+resource\PagesManager.class
