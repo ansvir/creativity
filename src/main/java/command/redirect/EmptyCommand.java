@@ -12,7 +12,7 @@ public class EmptyCommand implements Command {
     private final static Logger log = Logger.getLogger(EmptyCommand.class);
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
         return null;
     }
 

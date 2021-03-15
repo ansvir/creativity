@@ -1,21 +1,14 @@
 package servlet;
 
+import logic.nameGeneration.Letter;
+import logic.nameGeneration.NameGenerationLogic;
 
-import command.Command;
-import factory.ActionFactory;
-import logic.nameGeneration.NameGeneration;
-import resource.MessageManager;
-import resource.PagesManager;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-
-import static logic.nameGeneration.Alphabet.ALPHABET;
+import java.util.List;
 
 public class GenerateNameServlet extends HttpServlet {
 
@@ -30,9 +23,12 @@ public class GenerateNameServlet extends HttpServlet {
     }
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException{
-        String generatedName = new NameGeneration().generateName();
+        HttpSession session = request.getSession();
+        NameGenerationLogic nameGenerationLogic = new NameGenerationLogic((List<Letter>) session.getAttribute("letterList"), (int) session.getAttribute("nameLength"));
+        String generatedName = nameGenerationLogic.generateName();
+        String generatedLastName = nameGenerationLogic.generateName();
         response.setContentType("text/plain");
-        response.getWriter().write(generatedName);
+        response.getWriter().write(generatedName+" "+generatedLastName);
     }
 
 

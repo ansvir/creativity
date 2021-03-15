@@ -28,13 +28,11 @@ public class ProjectServlet extends HttpServlet {
     }
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        HttpSession session = request.getSession();
-        session.setAttribute("alphabet", ALPHABET.getLetters().split("\\|"));
         ActionFactory client = new ActionFactory();
         Command command = client.defineCommand(request);
         String page;
         try {
-            page = command.execute(request, response, session);
+            page = command.execute(request, response);
         } catch (IOException e) {
             page = PagesManager.getProperty("page.error");
         }
