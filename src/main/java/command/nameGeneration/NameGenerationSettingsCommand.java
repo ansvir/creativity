@@ -16,7 +16,6 @@ import java.util.List;
 public class NameGenerationSettingsCommand implements Command {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
-        System.out.println(request.getParameter("restoreDefaultsValue"));
         if (request.getParameter("restoreDefaultsValue").equals("true")) {
             List<Letter> letters = Letter.getDefaultLetterSettingsList();
             session.setAttribute("letterList", letters);

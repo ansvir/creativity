@@ -5,6 +5,6 @@
 
 </head>
 <body>
-    <jsp:forward page="jsp/generateName.jsp"/>
+    <jsp:forward page="jsp/signin.jsp"/>
 </body>
 </html>

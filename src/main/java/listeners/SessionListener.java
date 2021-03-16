@@ -3,11 +3,16 @@ package listeners;
 import logic.nameGeneration.Letter;
 import logic.nameGeneration.Name;
 
+import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 import java.util.List;
 
+import static logic.nameGeneration.Alphabet.CONSONANTS;
+import static logic.nameGeneration.Alphabet.VOWELS;
+
+@WebListener
 public class SessionListener implements HttpSessionListener {
     public void sessionCreated(HttpSessionEvent e) {
         HttpSession session = e.getSession();
@@ -15,6 +20,9 @@ public class SessionListener implements HttpSessionListener {
         session.setAttribute("letterList", letters);
         session.setAttribute("letterListString", Letter.convertLetterListToArrayOfJsonObjectsString(letters));
         session.setAttribute("nameLength", Name.getDefaultNameLength());
+        session.setAttribute("vowels", VOWELS.getLetters());
+        session.setAttribute("consonants", CONSONANTS.getLetters());
+        session.setAttribute("passedAuth", null);
     }
     public void sessionDestroyed(HttpSessionEvent e) {
     }

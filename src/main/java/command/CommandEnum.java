@@ -1,5 +1,6 @@
 package command;
 
+import command.auth.SigninCommand;
 import command.nameGeneration.NameGenerationCommand;
 import command.nameGeneration.NameGenerationSettingsCommand;
 
@@ -13,6 +14,11 @@ public enum CommandEnum {
     NAME_GENERATION_SETTINGS {
         {
             this.command = new NameGenerationSettingsCommand();
+        }
+    },
+    SIGNIN {
+        {
+            this.command = new SigninCommand();
         }
     };
 

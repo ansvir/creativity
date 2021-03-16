@@ -8,6 +8,11 @@ $(document).ready(function() {
         $(`#rangeValue-${letterList[i].symbol}`).text(letterList[i].priority);
     }
 
+    $('#settingsMsgSuccess').hide();
+    $('#settingsMsgFail').hide()
+
+    $('#nameLength').val(nameLength);
+
     $('#generateName').on('click', function () {
         records = [];
         for (let i = 0; i < 10; i++) {
@@ -93,5 +98,29 @@ $(document).ready(function() {
 
     $('#restoreDefaults').on('click', function() {
         $('#restoreDefaultsValue').val("true");
-    })
+    });
+
+    $('#settingsForm').submit(function(e) {
+        if ($('#restoreDefaultsValue').val() === "true") {
+            return;
+        }
+        let prioritySum = 0;
+        for (let i=0;i<vowels.length;i++) {
+            prioritySum += parseInt($(`#range-${vowels[i]}`).val());
+        }
+        console.log("vowels sum" + prioritySum);
+        if (prioritySum === 0) {
+            $('#settingsMsgFail').text("Vowels aren't appear in the name").show();
+            e.preventDefault();
+            return;
+        }
+        prioritySum = 0;
+        for (let i=0;i<consonants.length;i++) {
+            prioritySum += parseInt($(`#range-${consonants[i]}`).val());
+        }
+        if (prioritySum === 0) {
+            $('#settingsMsgFail').text("Consonants aren't appear in the name").show();
+            e.preventDefault();
+        }
+    });
 });

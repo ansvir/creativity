@@ -1,8 +1,4 @@
 <html>
-<%--// 1 set session attribute with default settings--%>
-<%--// 2 user clicks submit settings, settings sent to server as parameters of url--%>
-<%--// 3 servlet get parameters and set them to session attribute listsettings--%>
-<%--// 4 user clicks generate name ajax calls servlet and in r--%>
 <head>
     <title>Generate name</title>
     <jsp:include page="imports.jsp"/>
