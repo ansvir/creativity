@@ -12,6 +12,7 @@ $(document).ready(function() {
     $('#settingsMsgFail').hide()
 
     $('#nameLength').val(nameLength);
+    $('#generateLastName').val(generateLastName);
 
     $('#generateName').on('click', function () {
         records = [];

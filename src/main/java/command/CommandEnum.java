@@ -3,26 +3,43 @@ package command;
 import command.auth.SigninCommand;
 import command.nameGeneration.NameGenerationCommand;
 import command.nameGeneration.NameGenerationSettingsCommand;
+import command.redirect.EmptyCommand;
+
+import javax.inject.Inject;
 
 public enum CommandEnum {
 
+    EMPTY_COMMAND {
+        {
+            this.command = emptyCommand;
+        }
+    },
     NAME_GENERATION {
         {
-            this.command = new NameGenerationCommand();
+            this.command = nameGenerationCommand;
         }
     },
     NAME_GENERATION_SETTINGS {
         {
-            this.command = new NameGenerationSettingsCommand();
+            this.command = nameGenerationSettingsCommand;
         }
     },
     SIGNIN {
         {
-            this.command = new SigninCommand();
+            this.command = signinCommand;
         }
     };
 
     Command command;
+
+    @Inject
+    EmptyCommand emptyCommand;
+    @Inject
+    NameGenerationCommand nameGenerationCommand;
+    @Inject
+    NameGenerationSettingsCommand nameGenerationSettingsCommand;
+    @Inject
+    SigninCommand signinCommand;
 
     public Command getCommand() {
         return command;

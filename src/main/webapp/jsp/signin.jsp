@@ -9,7 +9,7 @@
     <div>
         <form action="project" method="post" class="form-signin">
             <input type="hidden" name="command" value="signin"/>
-            <img class="img-fluid mb-4" src="../static/images/logo.png" alt="">
+            <img class="img-fluid mb-3" src="../static/images/logo.png" alt="">
             <h1 class="h3 mb-4 font-weight-normal text-white" style="font-family: 'Lobster', cursive">Creativity: generate name, choose it, love it</h1>
             <label for="inputEmail" class="sr-only">Email address</label>
             <input type="email" id="inputEmail" class="form-control shadow-none border-secondary" placeholder="Email address" required autofocus name="username">
@@ -18,7 +18,7 @@
             <button class="btn btn-lg btn-primary btn-block bg-white text-primary border-0 mb-2" type="submit">Sign in</button>
             <button class="btn btn-lg btn-primary btn-block border-white" type="submit">Register now</button>
             <div class="mb-3">
-                <a class="text-white" href="#">Skip sign in and start generate names!</a>
+                <button class="btn btn-link text-white bg-transparent h5" type="submit">Skip sign in and start generate names!</button>
             </div>
             <c:if test="${not empty requestScope.passedAuth and not requestScope.passedAuth}">
                 <div class="alert alert-danger bg-danger border-0 text-white">Sorry, credentials are wrong!</div>

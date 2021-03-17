@@ -1,10 +1,12 @@
 package servlet;
 
 import command.Command;
+import command.qualifiers.EmptyCommandQualifier;
 import factory.ActionFactory;
 import resource.MessageManager;
 import resource.PagesManager;
 
+import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +15,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class ProjectServlet extends HttpServlet {
+
+    @Inject
+    @EmptyCommandQualifier
+    private Command command;
+
+    @Inject
+    private ActionFactory actionFactory;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,8 +34,12 @@ public class ProjectServlet extends HttpServlet {
     }
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        ActionFactory client = new ActionFactory();
-        Command command = client.defineCommand(request);
+        String action = request.getParameter("command");
+        try {
+            command = actionFactory.defineCommand(action);
+        } catch (IllegalArgumentException e) {
+            request.setAttribute("msg", action + " " + MessageManager.getProperty("message.wrongaction"));
+        }
         String page;
         try {
             page = command.execute(request, response);
@@ -46,6 +59,4 @@ public class ProjectServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath() + page);
         }
     }
-
-
 }

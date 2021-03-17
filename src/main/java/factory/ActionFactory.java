@@ -2,25 +2,33 @@ package factory;
 
 import command.Command;
 import command.CommandEnum;
-import command.redirect.EmptyCommand;
-import resource.MessageManager;
+import command.qualifiers.EmptyCommandQualifier;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Produces;
+import javax.inject.Inject;
 
 public class ActionFactory {
-    public Command defineCommand(HttpServletRequest request) {
-        Command current = new EmptyCommand();
-        String action = request.getParameter("command");
+
+    @Inject
+    @EmptyCommandQualifier
+    private Command command;
+
+    @Inject
+    private CommandEnum commandEnum;
+
+    public Command defineCommand(String action) throws IllegalArgumentException {
         if (action == null || action.isEmpty()) {
-            return current;
+            return command;
         }
-        try {
-            CommandEnum currentEnum = CommandEnum.valueOf(action.toUpperCase());
-            current = currentEnum.getCommand();
-        } catch (IllegalArgumentException e) {
-            request.setAttribute("msg", action
-                    + MessageManager.getProperty("message.wrongaction"));
-        }
-        return current;
+        commandEnum = CommandEnum.valueOf(action.toUpperCase());
+        command = commandEnum.getCommand();
+        return command;
+    }
+
+    @Produces
+    public static CommandEnum getEmptyCommandEnum()
+    {
+        return CommandEnum.EMPTY_COMMAND;
     }
 }

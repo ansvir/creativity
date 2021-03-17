@@ -11,9 +11,6 @@
             <jsp:param name="pageName" value="Generate a name"/>
         </jsp:include>
         <div class="container h-100" style="border: 2px solid black">
-            <div class="row">&nbsp;</div>
-            <div class="row">&nbsp;</div>
-            <div class="row">&nbsp;</div>
             <div class="row" style="border: 2px solid red">
                 <div class="col-lg-7 card card-body bg-light" style="border: 2px solid blue">
                     <div class="container" style="border: 2px solid black">

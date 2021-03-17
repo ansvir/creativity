@@ -1,7 +1,7 @@
 package servlet;
 
-import logic.nameGeneration.Letter;
-import logic.nameGeneration.NameGenerationLogic;
+import logic.name.generation.Letter;
+import logic.name.generation.NameGenerationLogic;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,11 +24,13 @@ public class GenerateNameServlet extends HttpServlet {
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException{
         HttpSession session = request.getSession();
-        NameGenerationLogic nameGenerationLogic = new NameGenerationLogic((List<Letter>) session.getAttribute("letterList"), (int) session.getAttribute("nameLength"));
+        List<Letter> letterList = (List<Letter>) session.getAttribute("letterList");
+        int nameLength = (int) session.getAttribute("nameLength");
+        boolean generateLastName = (boolean) session.getAttribute("generateLastName");
+        NameGenerationLogic nameGenerationLogic = new NameGenerationLogic(letterList, nameLength, generateLastName);
         String generatedName = nameGenerationLogic.generateName();
-        String generatedLastName = nameGenerationLogic.generateName();
         response.setContentType("text/plain");
-        response.getWriter().write(generatedName+" "+generatedLastName);
+        response.getWriter().write(generatedName);
     }
 
 

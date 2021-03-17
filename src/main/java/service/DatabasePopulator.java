@@ -23,13 +23,10 @@ public class DatabasePopulator {
     @Inject
     private UserEJB userEJB;
 
-    private User admin;
-    private User someUser;
-
     @PostConstruct
     private void populateDB() {
-        admin = new User("svirepa.anton@gmail.com", "admin");
-        someUser = new User("user@gmail.com", "user");
+        User admin = new User("svirepa.anton@gmail.com", "admin");
+        User someUser = new User("user@gmail.com", "user");
 
         userEJB.createUser(admin);
         userEJB.createUser(someUser);

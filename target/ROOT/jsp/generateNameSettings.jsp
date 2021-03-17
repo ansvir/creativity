@@ -15,36 +15,50 @@
         <form id="settingsForm" action="${pageContext.request.contextPath}/project" method="POST">
             <input type="hidden" name="command" value="name_generation_settings"/>
             <input id="restoreDefaultsValue" type="hidden" name="restoreDefaultsValue" value="false"/>
-            <div class="container h-100" style="border: 2px solid black">
-                <div class="row">&nbsp;</div>
+            <div class="container-fluid h-100" style="border: 2px solid black">
                 <div class="row d-flex justify-content-center">
                     <div id="settingsMsgSuccess" class="alert alert-success"></div>
                     <div id="settingsMsgFail" class="alert alert-danger"></div>
                 </div>
-                <div class="row">&nbsp;</div>
                 <div class="row h-100" style="border: 2px solid red">
                     <div class="col-4 border-right" style="border: 2px solid blue">
-                        <div class="d-flex align-items-center p-3">
-                            Setup letters priority in the generated word
-                        </div>
-                        <c:forEach var="letter" items="${sessionScope.letterList}">
-                            <div class="d-flex justify-content-center mb-3">
-                                <div class="text-center bg-light border">${fn:toUpperCase(letter.symbol)}</div>
-                                &nbsp;
-                                <input id="range-${letter.symbol}" name="range-${letter.symbol}" type="range" min="0"
-                                       max="100" step="10"/>
-                                &nbsp;
-                                <div id="rangeValue-${letter.symbol}"></div>
+                        <div class="p-3 border-bottom">
+                            <div class="p-2 d-flex align-items-center justify-content-center border bg-light mb-3">
+                                Setup letters priority in the generated word
                             </div>
-                        </c:forEach>
+                            <c:forEach var="letter" items="${sessionScope.letterList}">
+                                <div class="d-flex justify-content-center mb-3">
+                                    <div class="text-center bg-light border">${fn:toUpperCase(letter.symbol)}</div>
+                                    &nbsp;
+                                    <input id="range-${letter.symbol}" name="range-${letter.symbol}" type="range" min="0"
+                                           max="100" step="10"/>
+                                    &nbsp;
+                                    <div id="rangeValue-${letter.symbol}"></div>
+                                </div>
+                            </c:forEach>
+                        </div>
                     </div>
                     <div class="col-4" style="border: 2px solid blue">
-                        <div class="p-3 d-flex justify-content-center">
-                            Set up name length
+                        <div class="p-3 border-bottom">
+                            <div class="p-2 d-flex justify-content-center border bg-light mb-3">
+                                Set up name length
+                            </div>
+                            <div class="form-group">
+                                <input id="nameLength" type="number" name="nameLength" class="form-control" min="2"
+                                       max="20"/>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input id="nameLength" type="number" name="nameLength" class="form-control" min="2"
-                                   max="20"/>
+                        <div class="p-3 d-flex flex-column align-items-center justify-content-center border-bottom">
+
+                            <div class="mb-3 p-2 border bg-light">
+                                Generate last name
+                            </div>
+                            <div>
+                                <label class="switch">
+                                    <input name="generateLastName" type="checkbox" id="generateLastName" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <div class="col-4 border-left" style="border: 2px solid blue">

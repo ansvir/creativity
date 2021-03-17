@@ -1,11 +1,13 @@
 package command.main;
 
 import command.Command;
+import command.qualifiers.ChooseActionCommandQualifier;
 import resource.PagesManager;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@ChooseActionCommandQualifier
 public class ChooseActionCommand implements Command {
 
     @Override

@@ -1,5 +1,6 @@
 package command.auth;
 import command.Command;
+import command.qualifiers.SigninCommandQualifier;
 import entity.User;
 import resource.PagesManager;
 import service.UserEJB;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@SigninCommandQualifier
 public class SigninCommand implements Command {
 
     @Inject

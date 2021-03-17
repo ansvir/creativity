@@ -1,2 +1,3 @@
 F:\Anton\projects\project1\src\test\java\service\UserEJBIT.java
-F:\Anton\projects\project1\src\test\java\logic\nameGeneration\TestGenerateName.java
+F:\Anton\projects\project1\src\test\java\logic\name\generation\TestGenerateName.java
+F:\Anton\projects\project1\src\test\java\service\DatabasePopulator.java
