@@ -1,3 +1,11 @@
 /project1.iml
 /.idea/
 /target/
+/logs/
+/module-ear/module-ear.iml
+/module-ear/target/
+/module-ejb/target/
+/module-ejb/module-ejb.iml
+/module-web/target/
+/module-web/module-web.iml
+/wildfly-home/
