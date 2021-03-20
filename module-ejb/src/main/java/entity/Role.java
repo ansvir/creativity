@@ -7,7 +7,7 @@ import java.io.Serializable;
 @Entity(name="TROLE")
 @NamedQueries({
         @NamedQuery(name = Role.FIND_ALL, query = "SELECT r FROM TROLE r"),
-        @NamedQuery(name = Role.FIND_BY_NAME, query = "SELECT r FROM TROLE r WHERE r.name = :name")
+        @NamedQuery(name = Role.FIND_BY_NAME, query = "SELECT r FROM TROLE r WHERE r.name LIKE :name")
 })
 public class Role implements Serializable {
 

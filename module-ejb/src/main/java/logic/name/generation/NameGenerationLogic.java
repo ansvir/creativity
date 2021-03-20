@@ -1,5 +1,6 @@
 package logic.name.generation;
 
+import javax.ejb.Stateless;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -8,12 +9,15 @@ import static logic.name.generation.Alphabet.*;
 import static logic.name.generation.Code.CONSONANT_CODE;
 import static logic.name.generation.Code.VOWEL_CODE;
 
+@Stateless
 public class NameGenerationLogic {
     final Random RANDOM = new Random();
     private List<Letter> letters;
     private int nameLength;
     private String name;
     private boolean generateLastName;
+
+    public NameGenerationLogic() {}
 
     public NameGenerationLogic(List<Letter> letters, int nameLength, boolean generateLastName) {
         this.letters = letters;
@@ -76,6 +80,22 @@ public class NameGenerationLogic {
 
     public void setLetters(List<Letter> letters) {
         this.letters = letters;
+    }
+
+    public int getNameLength() {
+        return nameLength;
+    }
+
+    public void setNameLength(int nameLength) {
+        this.nameLength = nameLength;
+    }
+
+    public boolean isGenerateLastName() {
+        return generateLastName;
+    }
+
+    public void setGenerateLastName(boolean generateLastName) {
+        this.generateLastName = generateLastName;
     }
 
     private String generateNameOnTheBasisOfPriorities(int code) {

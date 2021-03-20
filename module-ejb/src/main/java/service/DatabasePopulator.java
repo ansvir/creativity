@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.inject.Inject;
+import java.io.Serializable;
 
 @Singleton
 @Startup
@@ -28,8 +29,8 @@ public class DatabasePopulator {
 
     @PostConstruct
     private void populateDB() {
-        User adminUser = new User("svirepa.anton@gmail.com", "admin");
-        User someUser = new User("user@gmail.com", "user");
+        User adminUser = new User("svirepa.anton@gmail.com", "admin", "admin");
+        User someUser = new User("user@gmail.com", "user", "user");
 
         if (userEJB.findByEmail(adminUser) == null) {
             userEJB.createUser(adminUser);

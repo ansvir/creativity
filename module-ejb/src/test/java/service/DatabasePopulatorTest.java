@@ -18,7 +18,7 @@ public class DatabasePopulatorTest {
     @Ignore
     @Test
     public void populateUserSchema() {
-        User user = new User("svirepa.anton@gmail.com", "admin");
+        User user = new User("svirepa.anton@gmail.com", "admin", "admin");
         userEJB.createUser(user);
     }
 

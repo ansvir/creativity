@@ -2,7 +2,7 @@ package com.creativity.servlet;
 
 import command.Command;
 import command.qualifiers.EmptyCommandQualifier;
-import factory.ActionFactory;
+import factory.CommandFactory;
 import resource.MessageManager;
 import resource.PagesManager;
 
@@ -21,7 +21,7 @@ public class CreativityServlet extends HttpServlet {
     private Command command;
 
     @Inject
-    private ActionFactory actionFactory;
+    private CommandFactory commandFactory;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -36,7 +36,7 @@ public class CreativityServlet extends HttpServlet {
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         String action = request.getParameter("command");
         try {
-            command = actionFactory.defineCommand(action);
+            command = commandFactory.defineCommand(action);
         } catch (IllegalArgumentException e) {
             request.setAttribute("msg", action + " " + MessageManager.getProperty("message.wrongaction"));
         }

@@ -4,6 +4,7 @@ import entity.User;
 import org.junit.Test;
 
 import javax.ejb.embeddable.EJBContainer;
+import javax.inject.Inject;
 import javax.naming.Context;
 import java.io.File;
 import java.util.HashMap;
@@ -24,7 +25,7 @@ public class UserEJBIT {
             Context ctx = ec.getContext();
 
             // Check JNDI dependencies
-            assertNotNull(ctx.lookup("java:global/jdbc/creativityDS"));
+            assertNotNull(ctx.lookup("java:jboss/datasources/creativityDS"));
             assertNotNull(ctx.lookup("java:global/classes/UserEJB!service.UserEJBRemote"));
             assertNotNull(ctx.lookup("java:global/classes/UserEJB!service.UserEJB"));
 
@@ -35,7 +36,7 @@ public class UserEJBIT {
             assertEquals(2, userEJB.findUsers().size());
 
             // Creates an instance of user
-            User user = new User("user1@gmail.com","user1");
+            User user = new User("user1@gmail.com","user1", "user1");
 
             // Persists the user to the database
             user = userEJB.createUser(user);

@@ -4,6 +4,7 @@ import entity.User;
 
 import javax.ejb.Remote;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.List;
 
 @Remote

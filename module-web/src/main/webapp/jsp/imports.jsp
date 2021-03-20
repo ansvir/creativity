@@ -17,7 +17,8 @@
 <link href="../static/css/page-pattern.css" rel="stylesheet"/>
 <link href="../static/css/output.css" rel="stylesheet"/>
 <link href="../static/css/slider.css" rel="stylesheet"/>
-<script src="../static/js/nameGeneration.js" type="text/javascript"></script>
+<script src="../static/js/name.generation.js" type="text/javascript"></script>
 <script src="../static/js/auth.js" type="text/javascript"></script>
+<script src="../static/js/home.js" type="text/javascript"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">

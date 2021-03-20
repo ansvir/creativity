@@ -8,10 +8,10 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.List;
 
-import static entity.User.FIND_ALL;
-import static entity.User.FIND_BY_EMAIL;
+import static entity.User.*;
 
 @Stateless
 public class UserEJB {
@@ -23,13 +23,25 @@ public class UserEJB {
     }
 
     public User findUser(@NotNull User user) {
-        return em.find(User.class, user);
+        return em.find(User.class, user.getId());
     }
 
     public User findByEmail(@NotNull User user) {
         String email = user.getEmail();
         TypedQuery<User> query = em.createNamedQuery(FIND_BY_EMAIL, User.class);
         query.setParameter("email", email);
+        List<User> resultList = query.getResultList();
+        if (!resultList.isEmpty()) {
+            return query.getSingleResult();
+        } else {
+            return null;
+        }
+    }
+
+    public User findByName(@NotNull User user) {
+        String name = user.getName();
+        TypedQuery<User> query = em.createNamedQuery(FIND_BY_NAME, User.class);
+        query.setParameter("name", name);
         List<User> resultList = query.getResultList();
         if (!resultList.isEmpty()) {
             return query.getSingleResult();

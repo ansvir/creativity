@@ -7,12 +7,12 @@
 </head>
 <body class="text-center">
     <div>
-        <form action="creativity" method="post" class="form-signin">
+        <form action="${pageContext.request.contextPath}/creativity" method="post" class="form-signin">
             <input type="hidden" name="command" value="signin"/>
             <img class="img-fluid mb-3" src="../static/images/logo.png" alt="">
-            <h1 class="h3 mb-4 font-weight-normal text-white" style="font-family: 'Lobster', cursive">Creativity: generate name, choose it, love it</h1>
+            <h1 class="h3 mb-4 font-weight-normal text-white" style="font-family: 'Lobster', cursive;">Creativity: generate name, choose it, love it</h1>
             <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="email" id="inputEmail" class="form-control shadow-none border-secondary" placeholder="Email address" required autofocus name="username">
+            <input type="email" id="inputEmail" class="form-control shadow-none border-secondary" placeholder="Email address" required autofocus name="email">
             <label for="inputPassword" class="sr-only">Password</label>
             <input type="password" id="inputPassword" class="form-control mb-3 shadow-none border-secondary" placeholder="Password" required name="password">
             <button class="btn btn-lg btn-primary btn-block bg-white text-primary border-0 mb-2" type="submit">Sign in</button>
@@ -23,7 +23,7 @@
             <c:if test="${not empty requestScope.passedAuth and not requestScope.passedAuth}">
                 <div class="alert alert-danger bg-danger border-0 text-white">Sorry, credentials are wrong!</div>
             </c:if>
-            <p class="text-white">&copy; 2020</p>
+            <p class="text-white">&copy; 2021</p>
         </form>
     <div class="d-flex align-items-bottom justify-content-center text-white">
         Image by&nbsp;

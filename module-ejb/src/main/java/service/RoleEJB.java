@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.List;
 
 import static entity.Role.FIND_ALL;
@@ -23,7 +24,7 @@ public class RoleEJB {
     }
 
     public Role findRole(@NotNull Role role) {
-        return em.find(Role.class, role);
+        return em.find(Role.class, role.getId());
     }
 
     public Role findByName(@NotNull Role role) {

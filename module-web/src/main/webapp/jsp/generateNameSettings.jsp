@@ -12,7 +12,7 @@
         <jsp:include page="navbar.jsp">
             <jsp:param name="pageName" value="Settings"/>
         </jsp:include>
-        <form id="settingsForm" action="${pageContext.request.contextPath}/project" method="POST">
+        <form id="settingsForm" action="${pageContext.request.contextPath}/creativity" method="POST">
             <input type="hidden" name="command" value="name_generation_settings"/>
             <input id="restoreDefaultsValue" type="hidden" name="restoreDefaultsValue" value="false"/>
             <div class="container-fluid h-100" style="border: 2px solid black">
@@ -24,16 +24,16 @@
                     <div class="col-4 border-right" style="border: 2px solid blue">
                         <div class="p-3 border-bottom">
                             <div class="p-2 d-flex align-items-center justify-content-center border bg-light mb-3">
-                                Setup letters priority in the generated word
+                                Setup letters priority in the generated name
                             </div>
                             <c:forEach var="letter" items="${sessionScope.letterList}">
                                 <div class="d-flex justify-content-center mb-3">
                                     <div class="text-center bg-light border">${fn:toUpperCase(letter.symbol)}</div>
                                     &nbsp;
                                     <input id="range-${letter.symbol}" name="range-${letter.symbol}" type="range" min="0"
-                                           max="100" step="10"/>
+                                           max="100" step="5" value="${letter.priority}"/>
                                     &nbsp;
-                                    <div id="rangeValue-${letter.symbol}"></div>
+                                    <div id="rangeValue-${letter.symbol}">${letter.priority}</div>
                                 </div>
                             </c:forEach>
                         </div>
@@ -45,7 +45,7 @@
                             </div>
                             <div class="form-group">
                                 <input id="nameLength" type="number" name="nameLength" class="form-control" min="2"
-                                       max="20"/>
+                                       max="20" value="${sessionScope.nameLength}"/>
                             </div>
                         </div>
                         <div class="p-3 d-flex flex-column align-items-center justify-content-center border-bottom">
@@ -55,7 +55,7 @@
                             </div>
                             <div>
                                 <label class="switch">
-                                    <input name="generateLastName" type="checkbox" id="generateLastName" checked>
+                                    <input name="generateLastName" type="checkbox" id="generateLastName" value="${sessionScope.generateLastName}">
                                     <span class="slider round"></span>
                                 </label>
                             </div>

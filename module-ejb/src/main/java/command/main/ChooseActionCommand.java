@@ -6,6 +6,7 @@ import resource.PagesManager;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.Serializable;
 
 @ChooseActionCommandQualifier
 public class ChooseActionCommand implements Command {

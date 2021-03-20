@@ -2,3 +2,11 @@
     height: 100%;
 }
 
+.creativityWord {
+    background: url(../images/signin-background.png) no-repeat center center;
+    background-size: 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
