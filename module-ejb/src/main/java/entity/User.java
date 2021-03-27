@@ -3,6 +3,7 @@ package entity;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity(name = "TUSER")
 @NamedQueries({
@@ -25,14 +26,17 @@ public class User implements Serializable {
     @NotNull
     private String password;
     private String name;
+    @OneToMany(cascade = {CascadeType.ALL})
+    private List<Language> languages;
 
     public User() {
     }
 
-    public User(@NotNull String email, @NotNull String password, String name) {
+    public User(@NotNull String email, @NotNull String password, String name, List<Language> languages) {
         this.email = email;
         this.password = password;
         this.name = name;
+        this.languages = languages;
     }
 
     public Long getId() {
@@ -67,6 +71,14 @@ public class User implements Serializable {
         this.name = name;
     }
 
+    public List<Language> getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(List<Language> languages) {
+        this.languages = languages;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -74,6 +86,7 @@ public class User implements Serializable {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
+                ", languages=" + languages +
                 '}';
     }
 }

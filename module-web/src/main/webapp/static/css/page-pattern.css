@@ -2,11 +2,25 @@
     height: 100%;
 }
 
-.creativityWord {
+.creativity-bg {
     background: url(../images/signin-background.png) no-repeat center center;
     background-size: 100%;
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
+}
+
+.tableScrollingY200 {
+    display: block;
+    position: relative;
+    height: 200px;
+    overflow: auto;
+}
+
+.tableScrollingY500 {
+    display: block;
+    position: relative;
+    height: 500px;
+    overflow: auto;
 }
 

@@ -1,14 +1,14 @@
 package service;
 
-import entity.Role;
 import entity.User;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.persistence.EntityGraph;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 import javax.validation.constraints.NotNull;
-import java.io.Serializable;
 import java.util.List;
 
 import static entity.User.*;

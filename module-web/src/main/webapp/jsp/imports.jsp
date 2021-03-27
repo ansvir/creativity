@@ -11,6 +11,7 @@
 <script src="../static/js/bootstrap.min.js"></script>
 <script src="../static/js/clipboard.min.js"></script>
 <script src="../static/js/jquery.dataTables.min.js"></script>
+<script src="../static/js/fabric.min.js"></script>
 <link href="../static/css/jquery.dataTables.min.css" rel="stylesheet"/>
 <link href="../static/css/simple-sidebar.css" rel="stylesheet">
 <link href="../static/css/namesTable.css" rel="stylesheet"/>
@@ -20,5 +21,7 @@
 <script src="../static/js/name.generation.js" type="text/javascript"></script>
 <script src="../static/js/auth.js" type="text/javascript"></script>
 <script src="../static/js/home.js" type="text/javascript"></script>
+<script src="../static/js/createSymbol.js" type="text/javascript"></script>
+<script src="../static/js/languageEditor.js" type="text/javascript"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">

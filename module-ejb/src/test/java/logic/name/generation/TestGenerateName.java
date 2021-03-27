@@ -1,6 +1,7 @@
 package logic.name.generation;
 
 import org.junit.Test;
+import utils.CommonUtils;
 
 import java.util.List;
 
@@ -25,10 +26,5 @@ public class TestGenerateName {
         for (Letter letter : letters) {
             System.out.println(letter.toString());
         }
-    }
-
-    @Test
-    public void testConvertObjectToJsonObjectString() {
-        System.out.println(Letter.convertLetterListToArrayOfJsonObjectsString(Letter.getDefaultLetterSettingsList()));
     }
 }

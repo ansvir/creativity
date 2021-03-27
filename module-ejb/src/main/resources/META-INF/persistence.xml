@@ -5,7 +5,7 @@
     <persistence-unit name="creativity" transaction-type="JTA">
         <jta-data-source>java:jboss/datasources/creativityDS</jta-data-source>
         <properties>
-            <property name="javax.persistence.schema-generation.database.action" value="update"/>
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.xa.PGXADataSource"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/creativity;create=true"/>
             <property name="javax.persistence.jdbc.user" value="postgres"/>

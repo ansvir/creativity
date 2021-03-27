@@ -6,9 +6,11 @@ import resource.PagesManager;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.transaction.Transactional;
 import java.io.Serializable;
 
 @ChooseActionCommandQualifier
+@Transactional
 public class ChooseActionCommand implements Command {
 
     @Override

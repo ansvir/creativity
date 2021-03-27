@@ -47,6 +47,7 @@ public class Name {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", nameLength=" + nameLength +
+                ", generateLastName=" + generateLastName +
                 '}';
     }
 }

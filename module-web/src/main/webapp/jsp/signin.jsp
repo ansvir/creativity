@@ -18,7 +18,7 @@
             <button class="btn btn-lg btn-primary btn-block bg-white text-primary border-0 mb-2" type="submit">Sign in</button>
             <button class="btn btn-lg btn-primary btn-block border-white" type="submit">Register now</button>
             <div class="mb-3">
-                <button class="btn btn-link text-white bg-transparent h5" type="submit">Skip sign in and start generate names!</button>
+                <a class="btn btn-link text-white bg-transparent h5" href="../jsp/generateName.jsp">Skip sign in and start generate names!</a>
             </div>
             <c:if test="${not empty requestScope.passedAuth and not requestScope.passedAuth}">
                 <div class="alert alert-danger bg-danger border-0 text-white">Sorry, credentials are wrong!</div>

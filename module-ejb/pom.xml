@@ -40,6 +40,26 @@
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
         </dependency>
+        <dependency>
+            <groupId>doubletype</groupId>
+            <artifactId>doubletype</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>Fontastic</groupId>
+            <artifactId>Fontastic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>sfntly</groupId>
+            <artifactId>sfntly</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.processing</groupId>
+            <artifactId>core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

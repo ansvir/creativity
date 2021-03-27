@@ -30,7 +30,8 @@
                                 <div class="d-flex justify-content-center mb-3">
                                     <div class="text-center bg-light border">${fn:toUpperCase(letter.symbol)}</div>
                                     &nbsp;
-                                    <input id="range-${letter.symbol}" name="range-${letter.symbol}" type="range" min="0"
+                                    <input id="range-${letter.symbol}" name="range-${letter.symbol}" type="range"
+                                           min="0"
                                            max="100" step="5" value="${letter.priority}"/>
                                     &nbsp;
                                     <div id="rangeValue-${letter.symbol}">${letter.priority}</div>
@@ -49,20 +50,19 @@
                             </div>
                         </div>
                         <div class="p-3 d-flex flex-column align-items-center justify-content-center border-bottom">
-
                             <div class="mb-3 p-2 border bg-light">
                                 Generate last name
                             </div>
                             <div>
                                 <label class="switch">
-                                    <input name="generateLastName" type="checkbox" id="generateLastName" value="${sessionScope.generateLastName}">
+                                    <input name="generateLastName" type="checkbox" id="generateLastName"
+                                           value="${sessionScope.generateLastName}"/>
                                     <span class="slider round"></span>
                                 </label>
                             </div>
                         </div>
                     </div>
                     <div class="col-4 border-left" style="border: 2px solid blue">
-
                     </div>
                 </div>
                 <div class="row border-top">

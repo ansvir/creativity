@@ -36,7 +36,7 @@ public class UserEJBIT {
             assertEquals(2, userEJB.findUsers().size());
 
             // Creates an instance of user
-            User user = new User("user1@gmail.com","user1", "user1");
+            User user = new User("user1@gmail.com","user1", "user1", null);
 
             // Persists the user to the database
             user = userEJB.createUser(user);

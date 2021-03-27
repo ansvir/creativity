@@ -40,23 +40,6 @@ public class Letter {
         return letterList;
     }
 
-    public static String convertLetterListToArrayOfJsonObjectsString(List<Letter> letters) {
-        String result = "[";
-        for(int i=0;i<letters.size();i++) {
-
-            if(i < letters.size()-1) {
-                result += letterToJsonObjectString(letters.get(i))+ ", ";
-            } else {
-                result += letterToJsonObjectString(letters.get(i));
-            }
-        }
-        result += "]";
-        return result;
-    }
-
-    private static String letterToJsonObjectString(Letter letter) {
-        return "{'symbol':'"+letter.getSymbol()+"', 'priority':"+letter.getPriority()+"}";
-    }
     @Override
     public String toString() {
         return "Letter{" +

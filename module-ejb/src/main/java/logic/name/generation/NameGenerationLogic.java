@@ -86,6 +86,10 @@ public class NameGenerationLogic {
         return nameLength;
     }
 
+    public boolean getGenerateLastName() {
+        return generateLastName;
+    }
+
     public void setNameLength(int nameLength) {
         this.nameLength = nameLength;
     }

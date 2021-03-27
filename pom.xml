@@ -74,6 +74,31 @@
                 <type>war</type>
                 <scope>compile</scope>
             </dependency>
+            <dependency>
+                <groupId>doubletype</groupId>
+                <artifactId>doubletype</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>sfntly</groupId>
+                <artifactId>sfntly</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>Fontastic</groupId>
+                <artifactId>Fontastic</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.processing</groupId>
+                <artifactId>core</artifactId>
+                <version>3.3.6</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>2.4</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

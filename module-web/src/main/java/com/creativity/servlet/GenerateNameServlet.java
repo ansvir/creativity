@@ -31,9 +31,11 @@ public class GenerateNameServlet extends HttpServlet {
         List<Letter> letterList = (List<Letter>) session.getAttribute("letterList");
         int nameLength = (Integer) session.getAttribute("nameLength");
         boolean generateLastName = (Boolean) session.getAttribute("generateLastName");
+        System.out.println(generateLastName);
         nameGenerationLogic.setLetters(letterList);
         nameGenerationLogic.setNameLength(nameLength);
         nameGenerationLogic.setGenerateLastName(generateLastName);
+        System.out.println(nameGenerationLogic.getGenerateLastName());
         String generatedName = nameGenerationLogic.generateName();
         response.setContentType("text/plain");
         response.getWriter().write(generatedName);

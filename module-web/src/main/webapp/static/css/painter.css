@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+.main {
+    width: 800px;
+    border: 1px solid #e0e0e0;
+    margin: 0 auto;
+    display: flex;
+    flex-grow: 1;
+}
+
+.left-block {
+    width: 160px;
+    border-right: 1px solid #e0e0e0;
+}
+
+.colors {
+    background-color: #ece8e8;
+    text-align: center;
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+
+.buttons {
+    height: 80px;
+    padding-top: 10px;
+}
+
+.buttons button {
+    display: block;
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 5px;
+    padding: 5px;
+    height: 30px;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.right-block {
+    width: 640px;
+}
+
+.paint-canvas {
+    cursor: url(../images/brush.png) auto;
+    width: 100%;
+    height: auto;
+}

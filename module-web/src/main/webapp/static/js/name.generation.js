@@ -2,16 +2,15 @@ $(document).ready(function() {
     let records = [];
     let newLetterList = letterList;
 
-    // for (let i=0;i<letterList.length;i++) {
-    //     $(`#range-${letterList[i].symbol}`).val(letterList[i].priority);
-    //     $(`#rangeValue-${letterList[i].symbol}`).text(letterList[i].priority);
-    // }
+    for (let i=0;i<letterList.length;i++) {
+        $(`#range-${letterList[i].symbol}`).val(letterList[i].priority);
+        $(`#rangeValue-${letterList[i].symbol}`).text(letterList[i].priority);
+    }
 
     $('#settingsMsgSuccess').hide();
-    $('#settingsMsgFail').hide()
+    $('#settingsMsgFail').hide();
 
-    // $('#nameLength').val(nameLength);
-    // $('#generateLastName').val(generateLastName);
+    $('#nameLength').val(nameLength);
 
     $('#generateName').on('click', function () {
         records = [];
@@ -62,14 +61,14 @@ $(document).ready(function() {
         }
     }
 
-    $('#namesTable').DataTable({
-        "scrollY": "200px",
-        "scrollCollapse": true,
-        "paging": false,
-        "info": false,
-        "searching": false,
-        "ordering": false
-    });
+    // $('#namesTable').DataTable({
+    //     "scrollY": "200px",
+    //     "scrollCollapse": true,
+    //     "paging": false,
+    //     "info": false,
+    //     "searching": false,
+    //     "ordering": false
+    // });
 
     $('#clearNamesTableData').on('click', function () {
         $('#namesTable tbody').html(`
@@ -86,7 +85,7 @@ $(document).ready(function() {
 
     for (let i=0;i<letterList.length;i++) {
         $(`#range-${letterList[i].symbol}`).change(function () {
-            newLetterList[i].priority = $(`#range-${letterList[i].symbol}`).val();
+            newLetterList[i].priority = parseInt($(`#range-${letterList[i].symbol}`).val());
             $(`#rangeValue-${letterList[i].symbol}`).text(newLetterList[i].priority);
             letterList = newLetterList;
         });
@@ -100,6 +99,9 @@ $(document).ready(function() {
         if ($('#restoreDefaultsValue').val() === "true") {
             return;
         }
+
+        console.log($('#generateLastName').val());
+        
         let prioritySum = 0;
         for (let i=0;i<vowels.length;i++) {
             prioritySum += parseInt($(`#range-${vowels[i]}`).val());

@@ -64,20 +64,22 @@
                 </div>
                 <div class="col-lg-5" style="border: 2px solid blue">
                     <div class="row d-flex align-items-center justify-content-center">
-                        <table id="namesTable" class="table table-bordered" style="border: 2px solid purple">
-                            <thead>
-                            <tr class="table-active">
-                                <th>
-                                    Generated names
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td id="emptyTextNameTable" class="text-dark text-center">empty</td>
-                            </tr>
-                            </tbody>
-                        </table>
+                        <div class="tableScrollingY200">
+                            <table id="namesTable" class="table table-bordered" style="border: 2px solid purple">
+                                <thead>
+                                <tr class="table-active">
+                                    <th>
+                                        Generated names
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td id="emptyTextNameTable" class="text-dark text-center">empty</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col">
