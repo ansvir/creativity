@@ -1,6 +1,7 @@
 $(document).ready(function() {
+
     let canvas = new fabric.Canvas('paint-canvas');
-    let symbolCanvas = new fabric.Canvas('symbolCanvas');
+    // let symbolCanvas = new fabric.Canvas('symbolCanvas');
     canvas.isDrawingMode = true;
     canvas.freeDrawingBrush.width = 10;
     canvas.freeDrawingBrush.color = "black";
@@ -56,10 +57,13 @@ $(document).ready(function() {
     });
 
     $('#saveSymbolModal').on('click', function() {
-        let sourceCanvas = document.getElementById('paint-canvas');
-        let symbolCanvasContext = symbolCanvas.getContext('2d');
-        symbolCanvasContext.clearRect(0, 0, symbolCanvas.width, symbolCanvas.height);
-        symbolCanvasContext.drawImage(sourceCanvas, 0, 0, 200, 200);
+        // let sourceCanvas = document.getElementById('paint-canvas');
+        // let symbolCanvasContext = symbolCanvas.getContext('2d');
+        // symbolCanvasContext.clearRect(0, 0, symbolCanvas.width, symbolCanvas.height);
+        // symbolCanvasContext.drawImage(sourceCanvas, 0, 0, 200, 200);
+        // console.log($('#symbolCanvas').attr('src'));
+        // $('#symbolCanvas').attr('src', canvas.toDataURL());
+        $('#figureDiv').html(`<img id="symbolPicture" src=${canvas.toDataURL()} alt="Symbol figure" width="200" height="200"/>`)
     });
 
     function resetOptions() {

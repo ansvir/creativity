@@ -51,6 +51,10 @@ public class Culture implements Serializable {
         this.symbols = symbols;
     }
 
+    public void addSymbol(Symbol symbol) {
+        this.symbols.add(symbol);
+    }
+
     @Override
     public String toString() {
         return "Culture{" +

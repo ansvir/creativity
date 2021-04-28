@@ -16,7 +16,8 @@ $(document).ready(function() {
         records = [];
         for (let i = 0; i < 10; i++) {
             $.ajax({
-                url: contextPath + '/generateName',
+                url: contextPath + '/creativity',
+                data: {command: 'name_generation'},
                 async: false,
                 success: function (responseText) {
                     records.push(responseText);
@@ -76,11 +77,6 @@ $(document).ready(function() {
             <td id="emptyTextNameTable" class="text-dark text-center">empty</td>
         </tr>
         `);
-    });
-
-    $("#menu-toggle").click(function (e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
     });
 
     for (let i=0;i<letterList.length;i++) {

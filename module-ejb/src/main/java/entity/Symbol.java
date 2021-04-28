@@ -21,8 +21,7 @@ public class Symbol implements Serializable {
     @Lob
     private byte[] figure;
     private String transcription;
-    @Transient
-    private String base64Image;
+
     public Symbol() {
     }
 
@@ -62,16 +61,6 @@ public class Symbol implements Serializable {
 
     public void setTranscription(String transcription) {
         this.transcription = transcription;
-    }
-
-    @Transient
-    public String getBase64Image() {
-        base64Image = Base64.getEncoder().encodeToString(this.figure);
-        return base64Image;
-    }
-
-    public void setBase64Image(String base64Image) {
-        this.base64Image = base64Image;
     }
 
     @Override

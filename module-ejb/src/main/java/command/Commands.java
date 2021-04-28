@@ -3,11 +3,12 @@ package command;
 import command.auth.LogoutCommand;
 import command.auth.SigninCommand;
 import command.language.editor.LanguageEditorGetCulturesCommand;
-import command.language.editor.LanguageEditorGetLanguageDetailsCommand;
+import command.language.editor.LanguageEditorGetAlphabetCommand;
+import command.language.editor.SaveSymbolCommand;
 import command.name.generation.NameGenerationCommand;
 import command.name.generation.NameGenerationSettingsCommand;
 import command.qualifiers.*;
-import command.redirect.EmptyCommand;
+import command.error.EmptyCommand;
 
 import javax.inject.Inject;
 
@@ -19,7 +20,8 @@ public class Commands {
         SIGNIN,
         LOGOUT,
         LANGUAGE_EDITOR_GET_CULTURES,
-        LANGUAGE_EDITOR_GET_DETAILS
+        LANGUAGE_EDITOR_GET_DETAILS,
+        SAVE_SYMBOL_COMMAND
     }
 
     @Inject
@@ -41,8 +43,11 @@ public class Commands {
     @LanguageEditorGetCulturesCommandQualifier
     LanguageEditorGetCulturesCommand languageEditorGetCulturesCommand;
     @Inject
-    @LanguageEditorGetLanguageDetailsCommandQualifier
-    LanguageEditorGetLanguageDetailsCommand languageEditorGetLanguageDetailsCommand;
+    @LanguageEditorGetAlphabetCommandQualifier
+    LanguageEditorGetAlphabetCommand languageEditorGetAlphabetCommand;
+    @Inject
+    @SaveSymbolCommandQualifier
+    SaveSymbolCommand saveSymbolCommand;
 
     public CommandEnum getCommandEnum(String action) {
         return CommandEnum.valueOf(action.toUpperCase());
@@ -55,7 +60,8 @@ public class Commands {
             case SIGNIN: return signinCommand;
             case LOGOUT: return logoutCommand;
             case LANGUAGE_EDITOR_GET_CULTURES: return languageEditorGetCulturesCommand;
-            case LANGUAGE_EDITOR_GET_DETAILS: return languageEditorGetLanguageDetailsCommand;
+            case LANGUAGE_EDITOR_GET_DETAILS: return languageEditorGetAlphabetCommand;
+            case SAVE_SYMBOL_COMMAND: return saveSymbolCommand;
             default: return emptyCommand;
         }
     }

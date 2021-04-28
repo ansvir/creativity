@@ -3,6 +3,7 @@
 <head>
     <title>Creativity: Sign in</title>
     <jsp:include page="imports.jsp"/>
+    <script src="../static/js/auth.js" type="text/javascript"></script>
     <link href="../static/css/signin.css" rel="stylesheet"/>
 </head>
 <body class="text-center">

@@ -2,16 +2,17 @@
 <head>
     <title>Generate name</title>
     <jsp:include page="imports.jsp"/>
+    <script src="../static/js/home.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="d-flex" id="wrapper">
     <jsp:include page="sidebar.jsp"/>
-    <div id="page-content-wrapper">
+    <div id="page-content-wrapper" class="creativity-bg-3">
         <jsp:include page="navbar.jsp">
             <jsp:param name="pageName" value="Home"/>
         </jsp:include>
-        <div class="container h-100">
-            <div class="row border-bottom pb-3">
+        <div class="container text-white">
+            <div class="row border-bottom border-white pb-3">
                 <div class="col-8 d-flex flex-column align-items-center justify-content-center">
                     <div class="h1" style="font-family: 'Lobster', cursive;">
                         Good&nbsp;<span id="partOfADay"></span>,&nbsp;<span
@@ -24,11 +25,10 @@
                          style="width:200px; height:200px"/>
                 </div>
             </div>
-            <div class="row mt-5">
-                <div class="col h3 d-flex align-items-center justify-content-center">
-                    Click "generate a name" or directly navigate to "settings"!
-                </div>
-            </div>
+<%--            <div class="row mt-5">--%>
+<%--                <div class="col h3 d-flex align-items-center justify-content-center">--%>
+<%--                </div>--%>
+<%--            </div>--%>
             <div class="row mt-5">
                 <div class="col"></div>
                 <div class="col">
